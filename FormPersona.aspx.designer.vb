@@ -50,22 +50,31 @@ Partial Public Class FormPersona
     Protected WithEvents txtApellido2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtFechaNac.
+    '''Control txtNacionalidad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtFechaNac As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtNacionalidad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control DropDownList1.
+    '''Control txtfechaNacimiento.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtfechaNacimiento As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control txtTelefono.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtTelefono As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control btnMostrar.

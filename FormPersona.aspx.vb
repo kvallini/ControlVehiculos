@@ -8,22 +8,27 @@
     End Sub
 
     Protected Sub btn_guardar(sender As Object, e As EventArgs)
+        Try
 
-        persona.Nombre = txtNombre.Text
-        persona.Apellido1 = txtApellido1.Text
-        persona.Apellido2 = txtApellido2.Text
-        persona.FechaNacimiento = txtFechaNac.Text
+            persona.Nombre = txtNombre.Text
+            persona.Apellido1 = txtApellido1.Text
+            persona.Apellido2 = txtApellido2.Text
+            persona.Nacionalidad = txtNacionalidad.Text
+            persona.FechaNacimiento = txtfechaNacimiento.Text
+            persona.Telefono = txtTelefono.Text
 
-        If dbHelper.create(persona) Then
-            lblMensaje.Text = "Persona creada"
+
+            lblMensaje.Text = dbHelper.create(persona)
             txtNombre.Text = ""
             txtApellido1.Text = ""
-            txtFechaNac.Text = ""
-        Else
-            lblMensaje.Text = "Ocurrio un error"
-        End If
+            txtApellido2.Text = ""
+            txtNacionalidad.Text = ""
+            txtfechaNacimiento.Text = ""
 
-        gvPersonas.DataBind()
+            gvPersonas.DataBind()
+        Catch ex As Exception
+            lblMensaje.Text = "Error al guardar la persona: " & ex.Message
+        End Try
 
     End Sub
 
@@ -80,7 +85,7 @@
 
         txtNombre.Text = row.Cells(3).Text
         txtApellido1.Text = row.Cells(4).Text
-        txtFechaNac.Text = row.Cells(5).Text
+        txtfechaNacimiento.Text = row.Cells(5).Text
 
         editando.Value = id
 
@@ -93,7 +98,7 @@
             .Nombre = txtNombre.Text(),
             .Apellido1 = txtApellido1.Text(),
             .Apellido2 = txtApellido2.Text(),
-            .FechaNacimiento = txtFechaNac.Text(),
+            .FechaNacimiento = txtfechaNacimiento.Text(),
             .IdPersona = editando.Value()
         }
         dbHelper.update(persona)
