@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class dbPersona
-    Public ReadOnly ConectionString As String = ConfigurationManager.ConnectionStrings("II46ConnectionString").ConnectionString
+    Public ReadOnly ConectionString As String = ConfigurationManager.ConnectionStrings("II-46ConnectionString").ConnectionString
 
     Public Function create(Persona As Persona) As String
         Try
@@ -33,7 +33,7 @@ Public Class dbPersona
         Try
             Dim sql As String = "DELETE FROM Personas WHERE idPersona = @idPersona"
             Dim Parametros As New List(Of SqlParameter) From {
-                New SqlParameter("@Id", id)
+                New SqlParameter("@idPersona", id)
             }
             Using connetion As New SqlConnection(ConectionString)
                 Using command As New SqlCommand(sql, connetion)
@@ -50,7 +50,7 @@ Public Class dbPersona
 
     Public Function update(ByRef Persona As Persona) As String
         Try
-            Dim sql As String = "UPDATE Personas SET Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad WHERE ID = @Id"
+            Dim sql As String = "UPDATE Personas SET Nombre = @Nombre, Apellido = @Apellido, Edad = @Edad WHERE @idPersona = @Id"
             Dim Parametros As New List(Of SqlParameter) From {
                 New SqlParameter("@Id", Persona.IdPersona),
                 New SqlParameter("@Nombre", Persona.Nombre),
