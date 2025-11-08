@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="FormPersona.aspx.vb" Inherits="ControlVehiculos.FormPersona" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="FormPersonas.aspx.vb" Inherits="ControlVehiculos.FormPersona" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -10,7 +10,7 @@
         <asp:TextBox ID="txtApellido1" CssClass="form-control" placeholder="Apellido1" runat="server"></asp:TextBox>
         <asp:TextBox ID="txtApellido2" CssClass="form-control" placeholder="Apellido2" runat="server"></asp:TextBox>
         <asp:TextBox ID="txtNacionalidad" CssClass="form-control" placeholder="Nacionalidad" runat="server"></asp:TextBox>
-        <asp:TextBox ID="txtfechaNacimiento" CssClass="form-control" placeholder="FechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
+        <asp:TextBox ID="txtFechaNacimiento" CssClass="form-control" placeholder="FechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
         <asp:TextBox ID="txtTelefono" CssClass="form-control" placeholder="Telefono" runat="server"></asp:TextBox>
 
 
@@ -35,7 +35,7 @@
             <asp:BoundField DataField="Apellido1" HeaderText="Primer Apellido" SortExpression="Apellido1" />
             <asp:BoundField DataField="Apellido2" HeaderText="Segundo Apellido" SortExpression="Apellido2" />
             <asp:BoundField DataField="Nacionalidad" HeaderText="Nacionalidad" SortExpression="Nacionalidad" />
-            <asp:BoundField DataField="Fecha de Nacimiento" HeaderText="Fecha de Nacimiento" SortExpression="Fecha de Nacimiento" />
+            <asp:BoundField DataField="FechaNacimiento" HeaderText="Fecha de Nacimiento" SortExpression="Fecha de Nacimiento" />
             <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
         </Columns>
     </asp:GridView>

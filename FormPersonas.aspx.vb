@@ -27,7 +27,6 @@ Public Class FormPersona
             Else
                 SwalUtils.ShowSwal(Me, mensaje)
             End If
-            SwalUtils.ShowSwal(Me, mensaje)
 
             txtNombre.Text = ""
             txtApellido1.Text = ""
@@ -38,7 +37,7 @@ Public Class FormPersona
             gvPersonas.DataBind()
         Catch ex As Exception
             lblMensaje.Text = "Error al guardar la persona: " & ex.Message
-            SwalUtils.ShowSwal(Me, "Error al guardar la persona: ", ex.Message)
+            SwalUtils.ShowSwalError(Me, "Error al guardar la persona: ", ex.Message)
         End Try
 
     End Sub
@@ -65,7 +64,8 @@ Public Class FormPersona
 
     Protected Sub gvPersonas_RowEditing(sender As Object, e As GridViewEditEventArgs)
 
-
+        gvPersonas.EditIndex = -1
+        gvPersonas.DataBind()
 
     End Sub
 
