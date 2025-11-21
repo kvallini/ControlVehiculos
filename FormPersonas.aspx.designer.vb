@@ -59,13 +59,13 @@ Partial Public Class FormPersona
     Protected WithEvents txtNacionalidad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtFechaNacimiento.
+    '''Control txtfechaNacimiento.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtFechaNacimiento As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtfechaNacimiento As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control txtTelefono.

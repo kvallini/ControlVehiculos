@@ -7,6 +7,8 @@
         End Sub
 
         Public Function ShowSwalScript(title As String, message As String, icon As String) As String
+            title = title.Replace("'", "")
+            message = message.Replace("'", "")
             Return $"swal.fire({{title: '{title}', text: '{message}', icon: '{icon}'}});"
         End Function
 

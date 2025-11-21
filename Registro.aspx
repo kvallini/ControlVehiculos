@@ -1,0 +1,42 @@
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Registro.aspx.vb" Inherits="ControlVehiculos.Registro" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="container mt-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-header text-white bg-primary">
+                <h4 class="mb-0">Registro de Usuario</h4>
+            </div>
+
+            <div class="card-body">
+
+                <asp:Label ID="lblMensaje" runat="server" CssClass="d-block mb-3 fw-bold text-danger" />
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Usuario:</label>
+                    <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email:</label>
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Contraseña:</label>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Confirmar Contraseña:</label>
+                    <asp:TextBox ID="txtConfirmarPassword" runat="server" CssClass="form-control" TextMode="Password" />
+                </div>
+
+                <asp:Button ID="btnRegistrar" runat="server" Text="Registrar"
+                    CssClass="btn btn-primary fw-bold mt-2" OnClick="btnRegistrar_Click" />
+
+            </div>
+        </div>
+    </div>
+
+</asp:Content>
+

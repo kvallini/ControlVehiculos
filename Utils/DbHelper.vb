@@ -1,7 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class DatabaseHelper
-    Private ReadOnly connectionString As String = ConfigurationManager.ConnectionStrings("11-46ConnectionString").ConnectionString
+Public Class DbHelper
+    Private ReadOnly ConnectionString As String = ConfigurationManager.ConnectionStrings("II-46ConnectionString").ConnectionString
+
 
     Public Sub New()
         EnsureErrorLogTableExists() ' Asegúrate de que la tabla exista al crear una instancia.
@@ -9,7 +10,7 @@ Public Class DatabaseHelper
 
     ' Método para obtener la conexión
     Public Function GetConnection() As SqlConnection
-        Dim conn As New SqlConnection(connectionString)
+        Dim conn As New SqlConnection(ConnectionString)
         Try
             conn.Open()
         Catch ex As SqlException
@@ -133,6 +134,7 @@ Public Class DatabaseHelper
             LogErrorToFile(fullMessage)
         End Try
     End Sub
+
     Public Function CreateParameter(name As String, value As Object) As SqlParameter
         Return New SqlParameter(name, If(value IsNot Nothing, value, DBNull.Value))
     End Function

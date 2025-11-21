@@ -1,3 +1,107 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="FormVehiculo.aspx.vb" Inherits="ControlVehiculos.FormVehiculo" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <asp:HiddenField ID="editando" runat="server" />
+
+    <div class="container mt-4 d-flex justify-content-center">
+        <div class="card shadow-sm border-0 w-100" style="max-width: 600px; background-color: #fff0f5;">
+            <div class="card-header text-white text-center" style="background-color: #d63384;">
+                <h4 class="mb-0">Formulario de Vehículo</h4>
+            </div>
+            <div class="card-body d-flex flex-column gap-3 align-items-center">
+
+                <asp:TextBox ID="txtPlaca" CssClass="form-control border-pink text-center" placeholder="Placa" runat="server" />
+
+                <!-- Marca -->
+                <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-select border-pink text-center">
+                    <asp:ListItem Text="Seleccione una marca" Value="" />
+                    <asp:ListItem Text="Toyota" Value="Toyota" />
+                    <asp:ListItem Text="Hyundai" Value="Hyundai" />
+                    <asp:ListItem Text="Kia" Value="Kia" />
+                    <asp:ListItem Text="Mazda" Value="Mazda" />
+                    <asp:ListItem Text="Nissan" Value="Nissan" />
+                </asp:DropDownList>
+
+                <!-- Modelo -->
+                <asp:DropDownList ID="ddlModelo" runat="server" CssClass="form-select border-pink text-center">
+                    <asp:ListItem Text="Seleccione un modelo" Value="" />
+                    <asp:ListItem Text="Sedán" Value="Sedán" />
+                    <asp:ListItem Text="SUV" Value="SUV" />
+                    <asp:ListItem Text="Pick-up" Value="Pick-up" />
+                    <asp:ListItem Text="Hatchback" Value="Hatchback" />
+                    <asp:ListItem Text="Van" Value="Van" />
+                </asp:DropDownList>
+
+                <%-- Propietario --%>
+                <asp:DropDownList ID="ddlPropietario" runat="server" CssClass="form-select border-pink text-center">
+                    <asp:ListItem Text="Seleccione propietario" Value="" />
+                </asp:DropDownList>
+
+                <div class="d-flex gap-2">
+                    <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-pink text-white fw-semibold" Text="Guardar" OnClick="btnGuardar_Click" />
+                    
+                </div>
+
+                <asp:Label ID="lblMensaje" runat="server" CssClass="fw-bold text-danger" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <asp:GridView ID="gvVehiculo" runat="server"
+            AutoGenerateColumns="False"
+            ShowHeaderWhenEmpty="True"
+            EmptyDataText="No hay vehículos registrados."
+            CssClass="table table-striped table-hover border border-pink"
+            DataKeyNames="IdVehiculo"
+            OnRowDeleting="gvVehiculo_RowDeleting"
+            OnRowEditing="gvVehiculo_RowEditing"
+            OnRowCancelingEdit="gvVehiculo_RowCancelingEdit"
+            OnRowUpdating="gvVehiculo_RowUpdating"
+            OnSelectedIndexChanged="gvVehiculo_SelectedIndexChanged">
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-rose-light" />
+                <asp:CommandField ShowEditButton="True" ControlStyle-CssClass="btn btn-rose-dark" />
+                <asp:BoundField DataField="IdVehiculo" HeaderText="ID" ReadOnly="True" SortExpression="IdVehiculo" />
+                <asp:BoundField DataField="Placa" HeaderText="Placa" SortExpression="Placa" />
+                <asp:BoundField DataField="Marca" HeaderText="Marca" SortExpression="Marca" />
+                <asp:BoundField DataField="Modelo" HeaderText="Modelo" SortExpression="Modelo" />
+                <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
+            </Columns>
+        </asp:GridView>
+    </div>
+
+
+    <div class="container mt-4">
+    <h5 class="text-center fw-semibold mb-3" style="color: #d63384;">Personas con vehículo asignado</h5>
+   
+        <asp:GridView ID="gvAsignados" runat="server"
+    AutoGenerateColumns="False"
+    ShowHeaderWhenEmpty="True"
+    EmptyDataText="No hay propietarios con vehículo asignado."
+    CssClass="table table-striped table-hover border border-pink"
+    DataKeyNames="IdPropietario"
+    OnRowEditing="gvAsignados_RowEditing"
+    OnRowUpdating="gvAsignados_RowUpdating"
+    OnRowCancelingEdit="gvAsignados_RowCancelingEdit"
+    OnRowDeleting="gvAsignados_RowDeleting">
+    <Columns>
+        <asp:CommandField ShowEditButton="True" ControlStyle-CssClass="btn btn-rose-dark" />
+        <asp:BoundField DataField="IdPropietario" HeaderText="ID" ReadOnly="True" SortExpression="IdPropietario" />
+        <asp:BoundField DataField="NombreCompleto" HeaderText="Propietario" SortExpression="NombreCompleto" ReadOnly="True" />
+        <asp:BoundField DataField="Placa" HeaderText="Placa" SortExpression="Placa" ReadOnly="True" />
+        <asp:BoundField DataField="Marca" HeaderText="Marca" SortExpression="Marca" />
+        <asp:BoundField DataField="Modelo" HeaderText="Modelo" SortExpression="Modelo" />
+        <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
+    </Columns>
+</asp:GridView>
+
+</div>
+
+
+    <!-- SweetAlert Script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
 </asp:Content>

@@ -20,10 +20,9 @@ Public Class FormPersona
             persona.FechaNacimiento = txtfechaNacimiento.Text
             persona.Telefono = txtTelefono.Text
 
-
             Dim mensaje = dbHelper.create(persona)
             If mensaje.Contains("Error") Then
-                SwalUtils.ShowSwal(Me, mensaje)
+                SwalUtils.ShowSwalError(Me, "Error", mensaje)
             Else
                 SwalUtils.ShowSwal(Me, mensaje)
             End If
@@ -33,11 +32,12 @@ Public Class FormPersona
             txtApellido2.Text = ""
             txtNacionalidad.Text = ""
             txtfechaNacimiento.Text = ""
+            txtTelefono.Text = ""
 
             gvPersonas.DataBind()
         Catch ex As Exception
             lblMensaje.Text = "Error al guardar la persona: " & ex.Message
-            SwalUtils.ShowSwalError(Me, "Error al guardar la persona: ", ex.Message)
+            SwalUtils.ShowSwalError(Me, "Error al guardar la persona", ex.Message)
         End Try
 
     End Sub
@@ -62,10 +62,7 @@ Public Class FormPersona
 
     End Sub
 
-    Protected Sub gvPersonas_RowEditing(sender As Object, e As GridViewEditEventArgs)
-
-        gvPersonas.EditIndex = -1
-        gvPersonas.DataBind()
+    Protected Sub GvPersonas_RowEditing(sender As Object, e As GridViewEditEventArgs)
 
     End Sub
 
@@ -110,26 +107,31 @@ Public Class FormPersona
     Protected Sub gvPersonas_SelectedIndexChanged(sender As Object, e As EventArgs)
 
         Dim row As GridViewRow = gvPersonas.SelectedRow()
-        Dim id As Integer = Convert.ToInt32(row.Cells(2).Text)
+        ' Dim id As Integer = Convert.ToInt32(row.Cells(2).Text)
         Dim persona As Persona = New Persona()
 
         txtNombre.Text = row.Cells(3).Text
         txtApellido1.Text = row.Cells(4).Text
-        txtfechaNacimiento.Text = row.Cells(5).Text
+        txtApellido2.Text = row.Cells(5).Text
+        txtNacionalidad.Text = row.Cells(6).Text
+        txtfechaNacimiento.Text = row.Cells(7).Text
+        txtTelefono.Text = row.Cells(8).Text
 
-        editando.Value = id
+        'editando.Value = id
 
     End Sub
 
     Protected Sub btnActualizar_Click(sender As Object, e As EventArgs)
 
 
-        Dim persona As Persona = New Persona With {
+        Dim persona As Persona = New Persona With
+            {
             .Nombre = txtNombre.Text(),
             .Apellido1 = txtApellido1.Text(),
             .Apellido2 = txtApellido2.Text(),
             .FechaNacimiento = txtfechaNacimiento.Text(),
-            .IdPersona = editando.Value()
+            .IdPersona = editando.Value(),
+            .Telefono = txtTelefono.Text()
         }
         dbHelper.update(persona)
         gvPersonas.DataBind()
