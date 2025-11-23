@@ -32,7 +32,7 @@
                 </div>
 
                 <asp:Button ID="btnRegistrar" runat="server" Text="Registrar"
-                    CssClass="btn btn-primary fw-bold mt-2" OnClick="btnRegistrar_Click" />
+                     OnClick="btnRegistrar_Click" CssClass="btn btn-primary fw-bold mt-2" />
 
             </div>
         </div>

@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container mt-4 d-flex justify-content-center">
-        <div class="card shadow-sm border-0 w-100" style="max-width: 700px; background-color: #fff0f5;">
-            <div class="card-header text-white text-center" style="background-color: #d63384;">
+            <div class="card shadow-sm border-2" style="background-color:#E1EEFF;">
+                <div class="card-header text-white" style="background-color:#03AFF3;">
                 <h4 class="mb-0">Detalle de Propietario y Vehículo</h4>
             </div>
             <div class="card-body d-flex flex-column gap-3">

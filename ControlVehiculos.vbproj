@@ -144,10 +144,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="FormPersonas.aspx" />
+    <Content Include="FormPersona.aspx">
+      <BrowseToURL>~/FormPersona.aspx</BrowseToURL>
+    </Content>
     <Content Include="FormPropietario.aspx" />
     <Content Include="FormVehiculo.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -229,11 +232,11 @@
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormPersonas.aspx.designer.vb">
-      <DependentUpon>FormPersonas.aspx</DependentUpon>
+    <Compile Include="FormPersona.aspx.designer.vb">
+      <DependentUpon>FormPersona.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormPersonas.aspx.vb">
-      <DependentUpon>FormPersonas.aspx</DependentUpon>
+    <Compile Include="FormPersona.aspx.vb">
+      <DependentUpon>FormPersona.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="FormPropietario.aspx.designer.vb">
@@ -253,12 +256,19 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.vb">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Models\Persona.vb" />
     <Compile Include="Models\Propietario.vb" />
