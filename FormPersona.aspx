@@ -15,7 +15,7 @@
                     <asp:TextBox ID="txtNombre" CssClass="form-control" placeholder="Nombre" runat="server" />
                     <asp:TextBox ID="txtApellido1" CssClass="form-control mt-2" placeholder="Primer Apellido" runat="server" />
                     <asp:TextBox ID="txtApellido2" CssClass="form-control mt-2" placeholder="Segundo Apellido" runat="server" />
-                    <asp:DropDownList ID="ddlNacionalidad" CssClass="form-control mt-2" runat="server">
+                    <asp:DropDownList ID="txtNacionalidad" CssClass="form-control mt-2" runat="server">
                     <asp:ListItem Value="">-- Seleccione Nacionalidad --</asp:ListItem>
                     <asp:ListItem>Costarricense</asp:ListItem>
                     <asp:ListItem>Nicaragüense</asp:ListItem>

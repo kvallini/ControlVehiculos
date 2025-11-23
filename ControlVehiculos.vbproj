@@ -217,7 +217,7 @@
     </Compile>
     <Compile Include="Admin.aspx.vb">
       <DependentUpon>Admin.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
